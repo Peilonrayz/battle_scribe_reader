@@ -1,0 +1,22 @@
+{{flags={bs}}}
+{{flags={bs}}}
+{{flags={bs}}}
+{{flags={bs}}}
+{{flags={bs}}}
+{{flags={bs}}}
+{{flags={bs}}}
+{{flags={bs}, type={self.type}}}
+{{flags={bs}, type={self.type}}}
+{{flags={bs}, type={self.type}}}
+{{flags={bs}, type={self.type}}}
+{{flags={bs}, type={self.type}, page={self.page}}}
+{{flags={bs}, type={self.type}, page={self.page}}}
+{{flags={bs}, type={self.type}, scope={self.scope}}}
+{{flags={bs}, type={self.type}, scope={self.scope}}}
+
+{{flags={bs}, default={self.default_selection_entry_id}}}
+{{flags={bs}, default={self.default_selection_entry_id}}}
+{{flags={bs}, primary={self.primary}}}
+{{flags={bs}, scope={self.scope}, repeats={self.repeats}}}
+{{flags={bs}, characteristic={self.characteristic_type_id}}}
+{{flags={bs}, cost={self.cost_type_id}}}

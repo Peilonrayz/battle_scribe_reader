@@ -1,0 +1,42 @@
+Profile({self.name} [{self.id}] | {self.profile_type_name} [{self.profile_type_id}]) {{flags={bs}}}
+
+Rule({self.name} [{self.id}]) {{flags={bs}}}
+ {indent(self.description, _SPACE)}
+
+InfoLink({self.name} [{self.id} -> {self.target_id}]) {{flags={bs}, type={self.type}}}
+
+ProfileType({self.name} [{self.id}]) {{flags={bs}}}
+
+CategoryEntry({self.name} [{self.id}]) {{flags={bs}}}
+
+ForceEntry({self.name} [{self.id}]) {{flags={bs}}}
+
+SelectionEntry({self.name} [{self.id}]) {{flags={bs}, type={self.type}, page={self.page}}}
+
+InfoLink({self.name} [{self.id} -> {self.target_id}]) {{flags={bs}, type={self.type}}}
+
+SharedSelectionEntry({self.name} [{self.id}]) {{flags={bs}, type={self.type}, page={self.page}}}
+
+SharedSelectionEntryGroups({self.name} [{self.id}]) {{flags={bs}, default={self.default_selection_entry_id}}}
+
+Profile({self.name} [{self.id}] | {self.profile_type_name} [{self.profile_type_id}]) {{flags={bs}}}
+
+Constraint({self.field} = {self.value} [{self.id}]) {{flags={bs}, scope={self.scope}, type={self.type}}}
+
+Modifier({self.field} = {self.value}) {{flags={bs}, type={self.type}}}
+
+Repeat({self.field} = {self.value} [{self.child_id}]) {{flags={bs}, scope={self.scope}, repeats={self.repeats}}}
+
+Condition({self.field} = {self.value} [{self.child_id}]) {{flags={bs}, scope={self.scope}, type={self.type}}}
+
+ConditionGroup() {{flags={bs}, type={self.type}}}
+
+CharacteristicType({self.name} [{self.id}]) {{flags={bs}}}
+
+CategoryLink({self.name} [{self.id} -> {self.target_id}]) {{flags={bs}, primary={self.primary}}}
+
+Characteristic({self.name} = {self.value}) {{flags={bs}, characteristic={self.characteristic_type_id}}}
+
+SelectionEntryGroup({self.name} [{self.id}]) {{flags={bs}, default={self.default_selection_entry_id}}}
+
+SelectionEntryGroup({self.name} = {self.value}) {{flags={bs}, cost={self.cost_type_id}}}
