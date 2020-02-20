@@ -1,5 +1,3 @@
 from .linkable import Linkable
 
-__all__ = [
-    'Linkable'
-]
+__all__ = ["Linkable"]

@@ -1,15 +1,14 @@
 from __future__ import annotations
-from typing import TypeVar, get_type_hints, Dict, Type, Any, Optional, Tuple
-import importlib
+
 import functools
+import importlib
+from typing import Any, Dict, Optional, Tuple, Type, TypeVar, get_type_hints
 
-from ..typed import typed, Typed
+from ..typed import Typed, typed
 
-__all__ = [
-    'Linkable'
-]
+__all__ = ["Linkable"]
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 class Import:
@@ -27,7 +26,9 @@ class Linkable:
     __attrs: Optional[Dict[str, Tuple[Type, Typed, Optional[Type]]]] = None
 
     @staticmethod
-    def _build_link(parent: Linkable, item: str, raw: Type[T], type: Typed, link: Type) -> T:
+    def _build_link(
+        parent: Linkable, item: str, raw: Type[T], type: Typed, link: Type
+    ) -> T:
         return raw()
 
     def __build_attrs(self):
@@ -38,7 +39,14 @@ class Linkable:
         type_hints = get_type_hints(self, globalns=globalns)
         for k, v in type_hints.items():
             t = typed(v)
-            l = next((i.type for i in [t] + t.arguments + t.parameters if issubclass(i.type, Linkable)), None)
+            l = next(
+                (
+                    i.type
+                    for i in [t] + t.arguments + t.parameters
+                    if issubclass(i.type, Linkable)
+                ),
+                None,
+            )
             self.__attrs[k] = v, t, l
 
     def get_lists(self):

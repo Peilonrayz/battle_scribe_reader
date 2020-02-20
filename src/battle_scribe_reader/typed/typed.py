@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-from typing import Type, List, Any, TypeVar
+from typing import Any, List, Type, TypeVar
 
-
-__all__ = ['typed', 'Typed']
+__all__ = ["typed", "Typed"]
 
 
 class Typed:
@@ -12,7 +11,9 @@ class Typed:
     arguments: List[Typed]
     parameters: List[Typed]
 
-    def __init__(self, raw: Type, type: Type, arguments: List[Typed], parameters: List[Typed]) -> None:
+    def __init__(
+        self, raw: Type, type: Type, arguments: List[Typed], parameters: List[Typed]
+    ) -> None:
         self.raw = raw
         self.type = type
         if arguments == parameters:
@@ -37,22 +38,22 @@ class Typed:
         )
 
     def __repr__(self) -> str:
-        return f'Types.from_raw({self.raw})'
+        return f"Types.from_raw({self.raw})"
 
     @staticmethod
     def from_raw(t: Type) -> Typed:
         if t is Any:
             return Typed(t, t, [], [])
 
-        type_ = getattr(t, '__origin__', None) or t
+        type_ = getattr(t, "__origin__", None) or t
         if isinstance(type_, TypeVar):
             type_ = type(type_)
 
         return Typed(
             t,
             type_,
-            [typed(i) for i in getattr(t, '__args__', None) or []],
-            [typed(i) for i in getattr(t, '__parameters__', None) or []]
+            [typed(i) for i in getattr(t, "__args__", None) or []],
+            [typed(i) for i in getattr(t, "__parameters__", None) or []],
         )
 
 
