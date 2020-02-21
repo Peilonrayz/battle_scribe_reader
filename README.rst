@@ -1,5 +1,5 @@
-Battle Scribe Reader
-====================
+BattleScribe Reader
+===================
 
 .. image:: https://travis-ci.com/Peilonrayz/battle_scribe_reader.svg?branch=master
    :target: https://travis-ci.com/Peilonrayz/battle_scribe_reader
@@ -8,7 +8,7 @@ Battle Scribe Reader
 About
 -----
 
-This is a skeleton project to have a standardized and concrete base for all projects.
+Read `BattleScribe <https://battlescribe.net/>`_ files.
 
 Installation
 ------------
@@ -37,4 +37,4 @@ To run all tests run ``nox``. No venv is needed; nox makes all of them for us.
 License
 -------
 
-battle_scribe_reader is available under the MIT license.
+BattleScribe Reader is available under the MIT license.

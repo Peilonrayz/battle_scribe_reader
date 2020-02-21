@@ -1,5 +1,5 @@
-Welcome to Battle Scribe Reader's documentation!
-================================================
+Welcome to BattleScribe Reader's documentation!
+===============================================
 
 .. toctree::
    :maxdepth: 2

@@ -1,14 +1,22 @@
 #!/usr/bin/env python
 from setuptools import find_packages, setup
 
+try:
+    import ConfigParser as configparser
+except ImportError:
+    import configparser
+
 with open("README.rst") as f:
     LONG_DESCRIPTION = f.read()
 
+config = configparser.ConfigParser()
+config.read("setup.cfg")
+
 setup(
     name="battle_scribe_reader",
-    version="0.0.0",
+    version=config.get("src", "version"),
     license="MIT",
-    description="Skeleton for Python projects.",
+    description="Read BattleScribe files",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/x-rst",
     author="Peilonrayz",
