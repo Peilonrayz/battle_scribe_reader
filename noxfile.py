@@ -6,7 +6,8 @@ import nox
 
 @nox.session(python=["3.4", "3.6"])
 def tests(session):
-    session.install(".", "pytest")
+    session.install("-e", ".")
+    session.install("pytest")
     session.run("pytest")
 
 
